@@ -44,6 +44,7 @@ export default function Projects() {
     const [animated, setAnimated] = useState(true);
     const [paused, setPaused] = useState(false);
     const [dragOffset, setDragOffset] = useState(0);
+    const [grabbing, setGrabbing] = useState(false);
     const wheelAccum = useRef(0);
     const lastWheelTime = useRef(0);
     const carouselRef = useRef<HTMLDivElement>(null);
@@ -93,6 +94,7 @@ export default function Projects() {
     const onDragStart = useCallback((clientX: number) => {
         dragStart.current = clientX;
         isDragging.current = false;
+        setGrabbing(true);
         setAnimated(false);
         setPaused(true);
     }, []);
@@ -113,6 +115,7 @@ export default function Projects() {
             if (diff < 0) goNext(); else goPrev();
         }
         dragStart.current = null;
+        setGrabbing(false);
         setPaused(false);
         // 드래그 종료 직후 클릭 이벤트 차단
         setTimeout(() => { isDragging.current = false; }, 0);
@@ -168,7 +171,7 @@ export default function Projects() {
                     <div
                         ref={carouselRef}
                         className="relative overflow-hidden px-4 md:px-6"
-                        style={{ cursor: dragStart.current !== null ? "grabbing" : "grab" }}
+                        style={{ cursor: grabbing ? "grabbing" : "grab" }}
                         onMouseDown={onMouseDown}
                         onMouseMove={onMouseMove}
                         onMouseUp={onMouseUp}
