@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
-import { notoSansKR } from "@/app/font";
+import { notoSansKR } from "@/lib/font";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/ui/LoadingScreen";

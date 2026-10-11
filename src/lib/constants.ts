@@ -46,8 +46,6 @@ export const ABOUT_DESCRIPTION = aboutData.description;
 // ============ Discord ============
 export const DISCORD_INVITE = {
     href: discordData.href,
-    inviteCode: discordData.inviteCode,
-    message: discordData.message,
     buttonLabel: discordData.buttonLabel,
     description: discordData.description,
 } as const;
@@ -56,7 +54,6 @@ export const DISCORD_INVITE = {
 export const STORE_LINK = {
     href: storeData.href,
     label: storeData.label,
-    labelShort: storeData.labelShort,
     description: storeData.description,
     badge: storeData.badge,
 } as const;
@@ -90,7 +87,6 @@ export const NAVBAR_LABELS = {
     openMenu: "메뉴 열기",
     mainMenu: "메인 메뉴",
     moreMenu: "더 알아보기",
-    footerMenu: "푸터 메뉴",
 } as const;
 
 // ============ Assets ============

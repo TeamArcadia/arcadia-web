@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type MouseEvent, useEffect, useState } from "react";
-import { blackOpsOne } from "@/app/font";
+import { blackOpsOne } from "@/lib/font";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import {
     DISCORD_INVITE,
