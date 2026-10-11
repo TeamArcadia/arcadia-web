@@ -1,12 +1,11 @@
 import aboutData from "@/data/about.json";
 import contactData from "@/data/contact.json";
 import discordData from "@/data/discord.json";
-import docsData from "@/data/docs.json";
 import footerData from "@/data/footer.json";
 import heroData from "@/data/hero.json";
 import projectsData from "@/data/projects.json";
+import policyData from "@/data/policy.json";
 import siteData from "@/data/site.json";
-import storeData from "@/data/store.json";
 import timelineData from "@/data/timeline.json";
 
 // ============ Navigation ============
@@ -50,17 +49,8 @@ export const DISCORD_INVITE = {
     description: discordData.description,
 } as const;
 
-// ============ Store ============
-export const STORE_LINK = {
-    href: storeData.href,
-    label: storeData.label,
-    description: storeData.description,
-    badge: storeData.badge,
-} as const;
-
-// ============ Docs ============
-export const DOCS_HOME = docsData.home;
-export const DOCS_PAGES = docsData.pages as readonly { label: string; href: string }[];
+// ============ Policy ============
+export const POLICY_PAGES = policyData as readonly { label: string; href: string }[];
 
 // ============ Timeline ============
 export const TIMELINE = timelineData as readonly { year: string; title: string; desc: string }[];
@@ -78,6 +68,8 @@ export const CONTACT_KAKAO = contactData.kakao;
 export const CONTACT_MESSAGE = contactData.message;
 
 // ============ Footer ============
+export const FOOTER_SLOGAN = footerData.slogan;
+export const FOOTER_SUPPORT = footerData.support as readonly { label: string; href: string }[];
 export const BUSINESS_INFO = footerData.business;
 export const FOOTER_SNS = footerData.sns as readonly { label: string; href: string; icon: string }[];
 
@@ -86,7 +78,7 @@ export const NAVBAR_LABELS = {
     closeMenu: "메뉴 닫기",
     openMenu: "메뉴 열기",
     mainMenu: "메인 메뉴",
-    moreMenu: "더 알아보기",
+    sideMenu: "사이드 메뉴",
 } as const;
 
 // ============ Assets ============

@@ -7,15 +7,13 @@ import { blackOpsOne } from "@/lib/font";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import {
     DISCORD_INVITE,
-    DOCS_HOME,
-    DOCS_PAGES,
+    POLICY_PAGES,
     FOOTER_SNS,
     LOGO_PATHS,
     NAV_ITEMS,
     NAVBAR_LABELS,
     SCROLL_THRESHOLD,
     SITE_NAME,
-    STORE_LINK,
     TEAM_NAME,
 } from "@/lib/constants";
 
@@ -59,7 +57,7 @@ export default function Navbar() {
             >
                 <Link
                     href="/"
-                    className="group flex items-center gap-2"
+                    className="group ml-3 flex items-center gap-2 md:ml-7"
                     style={{
                         transform: scrolled ? "scale(0.9)" : "scale(1)",
                         transition: "transform 0.15s ease-out",
@@ -115,7 +113,7 @@ export default function Navbar() {
                             );
                         })}
                     </nav>
-                    {/* 스크롤 시 햄버거 옆에 가입하기 + Store + Docs */}
+                    {/* 스크롤 시 햄버거 옆에 가입하기 */}
                     <div
                         className="hidden md:flex items-center gap-2 overflow-hidden transition-all duration-200"
                         style={{
@@ -132,24 +130,6 @@ export default function Navbar() {
                         >
                             <Image src="/icons/discord.svg" alt="" width={14} height={14} className="h-3.5 w-3.5 opacity-95" />
                             {DISCORD_INVITE.buttonLabel}
-                        </a>
-                        <a
-                            href={STORE_LINK.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="shrink-0 inline-flex items-center gap-1.5 rounded-full bg-violet-900 px-3.5 py-1.5 text-xs font-medium text-white shadow-lg shadow-violet-900/20 transition-colors hover:bg-violet-800"
-                        >
-                            <Image src="/icons/arcadia_logo_clear.svg" alt="" width={13} height={13} className="h-[13px] w-[13px] opacity-90" />
-                            구매하기
-                        </a>
-                        <a
-                            href={DOCS_HOME.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-medium text-white/70 transition-colors hover:border-white/40 hover:text-white"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[13px] w-[13px] opacity-80" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
-                            가이드북
                         </a>
                     </div>
                     <button
@@ -205,7 +185,7 @@ export default function Navbar() {
                     top: headerHeight,
                     transition: "transform 0.3s ease-out, top 0.15s ease-out",
                 }}
-                aria-label={scrolled ? NAVBAR_LABELS.mainMenu : NAVBAR_LABELS.moreMenu}
+                aria-label={NAVBAR_LABELS.sideMenu}
             >
                 <div className="flex min-h-0 flex-1 flex-col p-5">
                     {scrolled && (
@@ -234,40 +214,18 @@ export default function Navbar() {
                     <section
                         className={`flex-1 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
                         style={{ transitionDelay: open ? "200ms" : "0ms" }}
-                        aria-label={NAVBAR_LABELS.moreMenu}
+                        aria-label="정책 및 약관"
                     >
-                        <p className="mb-2.5 px-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                            {NAVBAR_LABELS.moreMenu}
-                        </p>
                         <ul className="space-y-0.5" role="list">
                             <li>
-                                <a
-                                    href={STORE_LINK.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={() => setOpen(false)}
-                                    className="flex items-center rounded-lg px-4 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-                                >
-                                    {STORE_LINK.label}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href={DOCS_HOME.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={() => setOpen(false)}
-                                    className="flex items-center rounded-lg px-4 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-                                >
-                                    {DOCS_HOME.label}
-                                </a>
+                                <p className="flex items-center px-4 py-2 text-[13px] font-medium text-white/90">
+                                    정책 및 약관
+                                </p>
                                 <ul className="mt-0.5 border-l border-white/[0.08] pl-3 ml-4 space-y-0.5" role="list">
-                                    {DOCS_PAGES.map((item) => (
+                                    {POLICY_PAGES.map((item) => (
                                         <li key={item.href}>
                                             <a
                                                 href={item.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
                                                 onClick={() => setOpen(false)}
                                                 className="block rounded-md py-1.5 pl-2.5 pr-3 text-[11px] font-normal text-zinc-500 transition-colors hover:bg-white/5 hover:text-zinc-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                                             >

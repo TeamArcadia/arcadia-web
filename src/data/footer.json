@@ -1,4 +1,18 @@
 {
+    "slogan": {
+        "en": "Ever-evolving to shape the ideal.",
+        "ko": "아르카디아는 이상을 목표로 합니다."
+    },
+    "support": [
+        {
+            "label": "FAQ",
+            "href": "/faq/"
+        },
+        {
+            "label": "서버 상태",
+            "href": "https://status.acda.kr"
+        }
+    ],
     "business": {
         "name": "준비중",
         "representative": "준비중",
@@ -14,7 +28,7 @@
         },
         {
             "label": "유튜브",
-            "href": "https://acda.kr/youtude",
+            "href": "https://acda.kr/youtube",
             "icon": "/icons/youtube.svg"
         },
         {

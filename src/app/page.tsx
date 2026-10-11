@@ -1,3 +1,4 @@
+import LoadingScreen from "@/components/ui/LoadingScreen";
 import { Hero, About, Timeline, Projects, Contact } from "@/components/sections";
 
 const SectionDivider = () => (
@@ -7,6 +8,7 @@ const SectionDivider = () => (
 export default function Home() {
     return (
         <div className="min-w-0 w-full max-w-full overflow-x-hidden">
+            <LoadingScreen />
             <Hero />
             <SectionDivider />
             <About />
