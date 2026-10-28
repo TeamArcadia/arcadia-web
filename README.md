@@ -10,4 +10,4 @@ Team ARCADIA 공식 웹사이트입니다.
 
 - **문의:** contact@acda.kr
 
-© 2026 Team Arcadia. All rights reserved.
+© 2026 아르카디아 (Arcadia). All rights reserved.
