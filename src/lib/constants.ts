@@ -1,6 +1,7 @@
 import aboutData from "@/data/about.json";
 import contactData from "@/data/contact.json";
 import discordData from "@/data/discord.json";
+import docsData from "@/data/docs.json";
 import footerData from "@/data/footer.json";
 import heroData from "@/data/hero.json";
 import projectsData from "@/data/projects.json";
@@ -48,6 +49,9 @@ export const DISCORD_INVITE = {
     buttonLabel: discordData.buttonLabel,
     description: discordData.description,
 } as const;
+
+// ============ Docs ============
+export const DOCS_HOME = docsData;
 
 // ============ Policy ============
 export const POLICY_PAGES = policyData as readonly { label: string; href: string }[];

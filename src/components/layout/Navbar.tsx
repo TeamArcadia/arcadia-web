@@ -7,6 +7,7 @@ import { blackOpsOne } from "@/lib/font";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import {
     DISCORD_INVITE,
+    DOCS_HOME,
     POLICY_PAGES,
     FOOTER_SNS,
     LOGO_PATHS,
@@ -113,7 +114,7 @@ export default function Navbar() {
                             );
                         })}
                     </nav>
-                    {/* 스크롤 시 햄버거 옆에 가입하기 */}
+                    {/* 스크롤 시 햄버거 옆에 가입하기 + Docs */}
                     <div
                         className="hidden md:flex items-center gap-2 overflow-hidden transition-all duration-200"
                         style={{
@@ -130,6 +131,15 @@ export default function Navbar() {
                         >
                             <Image src="/icons/discord.svg" alt="" width={14} height={14} className="h-3.5 w-3.5 opacity-95" />
                             {DISCORD_INVITE.buttonLabel}
+                        </a>
+                        <a
+                            href={DOCS_HOME.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-medium text-white/70 transition-colors hover:border-white/40 hover:text-white"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[13px] w-[13px] opacity-80" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
+                            {DOCS_HOME.buttonLabel}
                         </a>
                     </div>
                     <button
@@ -214,9 +224,20 @@ export default function Navbar() {
                     <section
                         className={`flex-1 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
                         style={{ transitionDelay: open ? "200ms" : "0ms" }}
-                        aria-label="정책 및 약관"
+                        aria-label="문서 및 정책"
                     >
                         <ul className="space-y-0.5" role="list">
+                            <li>
+                                <a
+                                    href={DOCS_HOME.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setOpen(false)}
+                                    className="flex items-center rounded-lg px-4 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                                >
+                                    {DOCS_HOME.label}
+                                </a>
+                            </li>
                             <li>
                                 <p className="flex items-center px-4 py-2 text-[13px] font-medium text-white/90">
                                     정책 및 약관

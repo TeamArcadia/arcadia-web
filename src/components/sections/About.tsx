@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { ABOUT_DESCRIPTION, ABOUT_HEADLINE, DISCORD_INVITE, SCROLL_SECTION, SECTION_HEADERS } from "@/lib/constants";
+import { ABOUT_DESCRIPTION, ABOUT_HEADLINE, DISCORD_INVITE, DOCS_HOME, SCROLL_SECTION, SECTION_HEADERS } from "@/lib/constants";
 
 export default function About() {
     return (
@@ -27,6 +27,21 @@ export default function About() {
                                 <p className="text-xs text-zinc-600">Community</p>
                                 <p className="mt-0.5 text-base font-semibold text-white/80 transition-colors group-hover:text-white">ARCADIA Discord</p>
                                 <p className="mt-0.5 text-sm leading-snug text-zinc-500">{DISCORD_INVITE.description}</p>
+                            </div>
+                            <span className="shrink-0 text-zinc-700 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-zinc-400">↗</span>
+                        </a>
+                        <div className="h-px w-full bg-zinc-700/60" />
+                        <a
+                            href={DOCS_HOME.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center gap-5 px-7 py-7 transition-all duration-300 hover:bg-white/[0.04]"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 shrink-0 text-white opacity-50 transition-all duration-300 group-hover:opacity-90 group-hover:scale-110" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
+                            <div className="flex-1 text-left">
+                                <p className="text-xs text-zinc-600">Documentation</p>
+                                <p className="mt-0.5 text-base font-semibold text-white/80 transition-colors group-hover:text-white">{DOCS_HOME.label}</p>
+                                <p className="mt-0.5 text-sm leading-snug text-zinc-500">{DOCS_HOME.description}</p>
                             </div>
                             <span className="shrink-0 text-zinc-700 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-zinc-400">↗</span>
                         </a>

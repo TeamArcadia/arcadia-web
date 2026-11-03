@@ -5,6 +5,10 @@
     },
     "support": [
         {
+            "label": "가이드북",
+            "href": "https://docs.acda.kr"
+        },
+        {
             "label": "FAQ",
             "href": "/faq/"
         },
