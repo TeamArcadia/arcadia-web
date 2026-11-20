@@ -8,7 +8,6 @@ const POLICY_PATHS = [
   "/policy/terms/",
   "/policy/license/",
   "/policy/privacy/",
-  "/policy/email-collection/",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
